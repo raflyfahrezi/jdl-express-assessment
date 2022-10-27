@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-helmet": "^6.1.5"
+    "@types/react-helmet": "^6.1.5",
+    "craco-plugin-scoped-css": "^1.1.1"
   }
 }
