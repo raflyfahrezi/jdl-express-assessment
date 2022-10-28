@@ -1,3 +1,5 @@
+export type TProductCategories = string[]
+
 export interface IProductResponse {
   limit: number
   products: IProduct[]
@@ -20,8 +22,10 @@ export interface IProduct {
 }
 
 export interface IProductState {
-  isLoading: boolean
   products: IProduct[]
+  categories: string[]
+  isLoadingProducts: boolean
+  isLoadingCategories: boolean
 }
 
 export interface IProductGenerator {
