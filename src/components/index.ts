@@ -1,4 +1,5 @@
+import Card from './card'
 import Wrapper from './wrapper'
 
-export { Wrapper }
+export { Card, Wrapper }
 export * from './form'
