@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Wrapper } from '@/components'
+import { Input, Wrapper } from '@/components'
 
 import './styles.scoped.scss'
 
@@ -13,7 +13,7 @@ const Navigation = () => {
             <p>Farhan's Shop</p>
           </div>
           <div>
-            <input type='text' />
+            <Input placeholder='Find product here' />
           </div>
         </div>
       </Wrapper>
