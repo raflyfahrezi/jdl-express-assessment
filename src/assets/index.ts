@@ -1,4 +1,5 @@
+import Back from './back'
 import StarIcon from './star'
 import LoadingIcon from './loading'
 
-export { StarIcon, LoadingIcon }
+export { Back, StarIcon, LoadingIcon }
