@@ -1,5 +1,6 @@
 import { ReactNode, HTMLAttributes } from 'react'
 
-export type PageWrapperProps = {
+export interface IPageWrapper extends HTMLAttributes<HTMLDivElement> {
+  title?: string
   children: ReactNode
-} & HTMLAttributes<HTMLDivElement>
+}
