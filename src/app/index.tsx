@@ -14,6 +14,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch<any>(productAction.GET_PRODUCT())
+    dispatch<any>(productAction.GET_PRODUCT_CATEGORIES())
   }, [])
 
   return (
