@@ -1,15 +1,22 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 
-import { PageWrapperProps } from './types'
+import { Head, Footer, Navigation } from '@/layout'
 
-const PageWrapper = ({ children }: PageWrapperProps) => {
+import { IPageWrapper } from './types'
+
+import './styles.scoped.scss'
+
+const PageWrapper = ({ title, children }: IPageWrapper) => {
   return (
     <>
-      <Helmet>
-        <title>React Typescript</title>
-      </Helmet>
-      <div>{children}</div>
+      <Head title={title} />
+      <div className='pageWrapper'>
+        <div>
+          <Navigation />
+          <main>{children}</main>
+        </div>
+        <Footer />
+      </div>
     </>
   )
 }
