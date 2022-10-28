@@ -8,8 +8,8 @@ const Navigation = () => {
   return (
     <nav className='navigation'>
       <Wrapper>
-        <div>
-          <div>
+        <div className='navigation-content'>
+          <div className='navigation-content__logo'>
             <p>Farhan's Shop</p>
           </div>
           <div>

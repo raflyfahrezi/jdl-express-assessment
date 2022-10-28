@@ -7,3 +7,17 @@
 
   background-color: $primaryLightBrown;
 }
+
+.navigation-content {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-content__logo {
+  p {
+    font-size: 20px;
+    font-family: 'Frank Ruhl Libre';
+  }
+}
