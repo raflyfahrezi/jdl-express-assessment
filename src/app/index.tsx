@@ -1,15 +1,14 @@
 import React from 'react'
 import { RouterProvider } from 'react-router-dom'
-
-import { PageWrapper } from '@/layout'
+import { HelmetProvider } from 'react-helmet-async'
 
 import { router } from './helpers'
 
 const App = () => {
   return (
-    <PageWrapper>
+    <HelmetProvider>
       <RouterProvider router={router} />
-    </PageWrapper>
+    </HelmetProvider>
   )
 }
 
