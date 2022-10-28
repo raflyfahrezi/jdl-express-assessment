@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { IProduct } from '@/models'
-import { Card, Wrapper } from '@/components'
+import { Card, Wrapper, Loading } from '@/components'
 
 import './styles.scoped.scss'
 
@@ -11,12 +11,24 @@ const Home = () => {
     (state: any) => state.productReducer.products
   )
 
+  const isLoadingProducts: boolean = useSelector(
+    (state: any) => state.productReducer.isLoadingProducts
+  )
+
   return (
     <Wrapper>
       <div className='home'>
-        {products.map((item) => {
-          return <Card key={item.id} {...item} />
-        })}
+        {isLoadingProducts ? (
+          <div className='home-loading'>
+            <Loading size='large' />
+          </div>
+        ) : (
+          <div className='home-content'>
+            {products.map((item) => {
+              return <Card key={item.id} {...item} />
+            })}
+          </div>
+        )}
       </div>
     </Wrapper>
   )
