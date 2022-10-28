@@ -5,7 +5,7 @@
 
   font-size: 14px;
 
-  padding: 8px 12px;
+  padding: 10px 12px;
 
   border: 2px solid transparent;
   border-radius: 3px;
@@ -13,6 +13,8 @@
   outline: none;
 
   transition: 0.2s all;
+
+  border: 2px solid $primaryMediumBrown;
 
   &:focus {
     border: 2px solid $primaryDarkBrown;
