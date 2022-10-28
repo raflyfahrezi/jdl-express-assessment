@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import { StarIcon } from '@/assets'
 import { Button } from '@/components'
 
+import { formatPrice, formatRating, getPriceBeforeDiscount } from '@/utils'
 import { ICard } from './types'
-import { formatPrice, formatRating, getPriceBeforeDiscount } from './helpers'
 
 import './styles.scoped.scss'
 
