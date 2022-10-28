@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
+import { Back } from '@/assets'
 import { Input, Wrapper } from '@/components'
 
 import './styles.scoped.scss'
@@ -20,7 +21,10 @@ const Navigation = () => {
               <Input placeholder='Find product here' />
             ) : (
               <Link to='/' className='navigation-content__back'>
-                Back to home
+                <div className='navigation-content__backLogo'>
+                  <Back />
+                </div>
+                <p>Back to home</p>
               </Link>
             )}
           </div>
