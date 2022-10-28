@@ -1,5 +1,6 @@
-import Back from './back'
+import BackIcon from './back'
 import StarIcon from './star'
 import LoadingIcon from './loading'
+import VerifiedIcon from './verified'
 
-export { Back, StarIcon, LoadingIcon }
+export { BackIcon, StarIcon, LoadingIcon, VerifiedIcon }
