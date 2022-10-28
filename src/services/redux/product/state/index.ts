@@ -2,5 +2,7 @@ import { IProductState } from '@/models'
 
 export const initialState: IProductState = {
   products: [],
-  isLoading: true,
+  categories: [],
+  isLoadingProducts: true,
+  isLoadingCategories: true,
 }
