@@ -7,12 +7,14 @@ import { IProduct } from '@/models'
 import { axiosGet } from '@/utils'
 import { Wrapper, Loading } from '@/components'
 
+import ProductInfo from './info'
+
 import './styles.scoped.scss'
 
 const Product = () => {
   const { id } = useParams()
 
-  const [product, setProduct] = useState<IProduct>()
+  const [product, setProduct] = useState<IProduct | undefined>(undefined)
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   const fetchData = async () => {
@@ -34,9 +36,7 @@ const Product = () => {
             <Loading size='large' />
           </div>
         ) : (
-          <div>
-            <p>{product?.title}</p>
-          </div>
+          <div>{product && <ProductInfo product={product} />}</div>
         )}
       </div>
     </Wrapper>
