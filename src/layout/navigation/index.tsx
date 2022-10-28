@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 import { Input, Wrapper } from '@/components'
 
 import './styles.scoped.scss'
 
 const Navigation = () => {
+  const location = useLocation()
+
   return (
     <nav className='navigation'>
       <Wrapper>
@@ -13,7 +16,13 @@ const Navigation = () => {
             <p>Farhan's Shop</p>
           </div>
           <div>
-            <Input placeholder='Find product here' />
+            {location.pathname === '/' ? (
+              <Input placeholder='Find product here' />
+            ) : (
+              <Link to='/' className='navigation-content__back'>
+                Back to home
+              </Link>
+            )}
           </div>
         </div>
       </Wrapper>
