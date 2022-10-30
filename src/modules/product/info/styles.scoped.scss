@@ -11,6 +11,10 @@
 
   display: flex;
   gap: 40px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 }
 
 .info-header__thumbnail {

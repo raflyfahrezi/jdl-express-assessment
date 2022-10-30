@@ -39,7 +39,7 @@ const Navigation = () => {
                 <Input
                   value={keyword}
                   onChange={searchHandler}
-                  placeholder='Find product here'
+                  placeholder='Find product'
                 />
                 <Button type='submit'>Search</Button>
               </form>
