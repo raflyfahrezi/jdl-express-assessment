@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Tag } from '@/components'
+import { Tag, Carousel } from '@/components'
 import { StarIcon, VerifiedIcon } from '@/assets'
 import { formatPrice, formatRating, getPriceBeforeDiscount } from '@/utils'
 
@@ -15,8 +15,8 @@ const ProductInfo = ({ product }: IInfo) => {
     stock,
     brand,
     rating,
+    images,
     category,
-    thumbnail,
     description,
     discountPercentage,
   } = product
@@ -25,9 +25,7 @@ const ProductInfo = ({ product }: IInfo) => {
     <div className='info'>
       <div className='info-header'>
         <div className='info-header__thumbnail'>
-          <div>
-            <img src={thumbnail} alt='' />
-          </div>
+          <Carousel images={images} />
         </div>
         <div className='info-header__details'>
           <h1>{title}</h1>
