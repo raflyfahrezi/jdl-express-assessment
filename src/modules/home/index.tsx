@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useState, useEffect, ChangeEvent } from 'react'
+import React, { ChangeEvent } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { IProduct } from '@/models'
@@ -16,6 +16,10 @@ const Home = () => {
     (state: any) => state.productReducer.products
   )
 
+  const category: string = useSelector(
+    (state: any) => state.productReducer.category
+  )
+
   const categories: string[] = useSelector(
     (state: any) => state.productReducer.categories
   )
@@ -24,25 +28,18 @@ const Home = () => {
     (state: any) => state.productReducer.isLoadingProducts
   )
 
-  const [selectedCategory, setSelectedCategory] = useState<string>('')
-
   const selectHandle = (e: ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target
 
-    setSelectedCategory(value)
+    dispatch<any>(productAction.SET_PRODUCT_CATEGORY(value))
+    dispatch<any>(productAction.GET_PRODUCT_BY_CATEGORY(value))
   }
-
-  useEffect(() => {
-    if (selectedCategory) {
-      dispatch<any>(productAction.GET_PRODUCT_BY_CATEGORY(selectedCategory))
-    }
-  }, [selectedCategory])
 
   return (
     <Wrapper>
       <div className='home-categories'>
         <Select
-          value={selectedCategory}
+          value={category}
           onChange={selectHandle}
           placeholder='Filter by categories'
         >
