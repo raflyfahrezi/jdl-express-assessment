@@ -10,14 +10,23 @@
   padding: 20px 0;
 
   background-color: $primaryLightBrown;
+
+  @media (max-width: 500px) {
+    height: auto;
+  }
 }
 
 .navigation-content {
   width: 100%;
 
   display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 }
 
 .navigation-content__logo {
