@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Back = () => {
+import { IBack } from './types'
+
+const Back = ({ color }: IBack) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -10,6 +12,7 @@ const Back = () => {
       viewBox='0 0 24 24'
       strokeWidth={1.5}
       stroke='currentColor'
+      style={{ color: color ?? '' }}
     >
       <path
         strokeLinecap='round'
