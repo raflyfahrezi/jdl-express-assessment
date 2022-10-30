@@ -57,3 +57,20 @@ export function* getProductByCategory(query: IProductActionReturn) {
     //
   }
 }
+
+export function* getProductByKeyword(query: IProductActionReturn) {
+  try {
+    const { data } = yield axiosGet<IProductResponse>(
+      `/products/search?q=${query.data}`,
+      {}
+    )
+    const response = data as IProductResponse
+
+    yield put({
+      type: SET_PRODUCT,
+      data: response.products,
+    })
+  } catch {
+    //
+  }
+}
