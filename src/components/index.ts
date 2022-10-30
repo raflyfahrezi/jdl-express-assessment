@@ -1,6 +1,7 @@
+import Tag from './tag'
 import Card from './card'
 import Loading from './loading'
 import Wrapper from './wrapper'
 
-export { Card, Loading, Wrapper }
+export { Tag, Card, Loading, Wrapper }
 export * from './form'
