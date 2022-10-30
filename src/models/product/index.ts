@@ -22,6 +22,8 @@ export interface IProduct {
 }
 
 export interface IProductState {
+  keyword: string
+  category: string
   products: IProduct[]
   categories: string[]
   isLoadingProducts: boolean
