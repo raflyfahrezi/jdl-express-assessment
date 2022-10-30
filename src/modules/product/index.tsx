@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
+import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 
@@ -29,17 +30,24 @@ const Product = () => {
   }, [])
 
   return (
-    <Wrapper>
-      <div className='product'>
-        {isLoading ? (
-          <div className='product__loading'>
-            <Loading size='large' />
-          </div>
-        ) : (
-          <div>{product && <ProductInfo product={product} />}</div>
-        )}
-      </div>
-    </Wrapper>
+    <>
+      {product && (
+        <Helmet>
+          <title>{product.title}</title>
+        </Helmet>
+      )}
+      <Wrapper>
+        <div className='product'>
+          {isLoading ? (
+            <div className='product__loading'>
+              <Loading size='large' />
+            </div>
+          ) : (
+            <div>{product && <ProductInfo product={product} />}</div>
+          )}
+        </div>
+      </Wrapper>
+    </>
   )
 }
 
