@@ -1,0 +1,11 @@
+@import '@/styles/theme.scss';
+
+.button {
+  background-color: $primaryDarkBrown;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
