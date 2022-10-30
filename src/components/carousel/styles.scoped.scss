@@ -1,0 +1,99 @@
+@import '@/styles/theme.scss';
+
+.carousel {
+  width: 100%;
+  height: 300px;
+
+  background-color: white;
+
+  position: relative;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  border-radius: 3px;
+
+  overflow: hidden;
+
+  & ~ img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+
+  &:hover .carousel-button {
+    opacity: 1;
+  }
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.carousel-button {
+  width: 60px;
+  height: 100%;
+
+  cursor: pointer;
+
+  position: absolute;
+
+  padding: 0 16px;
+
+  opacity: 0;
+
+  transition: 0.2s all;
+
+  z-index: 1;
+
+  border: none;
+  outline: none;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button--left {
+  left: 0;
+}
+
+.carousel-button--right {
+  right: 0;
+}
+
+.carousel-button > svg {
+  color: white;
+}
+
+.carousel__dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  transition: 1s all;
+
+  background-color: #e5e7eb;
+}
+
+.carousel-wrapper {
+  width: 100%;
+
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.carousel-dot__wrapper {
+  width: 100%;
+
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.carousel-dot__active {
+  background-color: $primaryDarkBrown;
+}
