@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Tag, Carousel } from '@/components'
 import { StarIcon, VerifiedIcon } from '@/assets'
 import { formatPrice, formatRating, getPriceBeforeDiscount } from '@/utils'
 
@@ -14,8 +15,8 @@ const ProductInfo = ({ product }: IInfo) => {
     stock,
     brand,
     rating,
+    images,
     category,
-    thumbnail,
     description,
     discountPercentage,
   } = product
@@ -24,7 +25,7 @@ const ProductInfo = ({ product }: IInfo) => {
     <div className='info'>
       <div className='info-header'>
         <div className='info-header__thumbnail'>
-          <img src={thumbnail} alt='' />
+          <Carousel images={images} />
         </div>
         <div className='info-header__details'>
           <h1>{title}</h1>
@@ -51,12 +52,15 @@ const ProductInfo = ({ product }: IInfo) => {
             <div className='info-header-verified__icon'>
               <VerifiedIcon />
             </div>
-            <p> {brand}</p>
+            <p>{brand}</p>
+          </div>
+          <div className='info-header-category'>
+            <Tag>{category}</Tag>
           </div>
         </div>
       </div>
-      <div>
-        <p>About this product</p>
+      <div className='info-description'>
+        <p className='info-description__title'>About this product</p>
         <p>{description}</p>
       </div>
     </div>

@@ -1,8 +1,12 @@
 import { IProductState } from '@/models'
 
-import { SET_PRODUCT, SET_PRODUCT_CATEGORIES } from '../action'
 import { initialState } from '../state'
 import { IProductActionReturn } from '../action/types'
+import {
+  SET_PRODUCT,
+  SET_PRODUCT_CATEGORIES,
+  GET_PRODUCT_BY_CATEGORY,
+} from '../action'
 
 export const productReducer = (
   state = { ...initialState },
@@ -20,6 +24,11 @@ export const productReducer = (
         ...state,
         categories: action.data,
         isLoadingCategories: false,
+      }
+    case GET_PRODUCT_BY_CATEGORY:
+      return {
+        ...state,
+        isLoadingProducts: true,
       }
     default:
       return state

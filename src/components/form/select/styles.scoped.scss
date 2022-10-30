@@ -1,0 +1,22 @@
+@import '@/styles/theme.scss';
+
+.select {
+  width: 100%;
+
+  font-size: 14px;
+
+  padding: 10px 12px;
+
+  border: 2px solid transparent;
+  border-radius: 3px;
+
+  outline: none;
+
+  transition: 0.2s all;
+
+  border: 2px solid $primaryMediumBrown;
+
+  &:focus {
+    border: 2px solid $primaryDarkBrown;
+  }
+}
